@@ -1,0 +1,33 @@
+{
+  "name": "challenge-ecommerce-checkout",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "npm run db-populate && next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "db-populate": "npx ts-node scripts/index.ts",
+    "migrate": "npx prisma migrate dev --name init && npx prisma generate",
+    "init-db": "npx prisma init --datasource-provider sqlite"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.10.4",
+    "@emotion/styled": "^11.10.4",
+    "@mui/icons-material": "^5.10.3",
+    "@mui/material": "^5.10.5",
+    "@prisma/client": "^4.3.1",
+    "next": "12.3.0",
+    "prisma": "^4.3.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "18.7.18",
+    "@types/react": "18.0.20",
+    "@types/react-dom": "18.0.6",
+    "eslint": "8.23.1",
+    "eslint-config-next": "12.3.0",
+    "typescript": "4.8.3"
+  }
+}
