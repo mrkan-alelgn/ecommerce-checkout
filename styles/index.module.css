@@ -1,3 +1,26 @@
 #appContainer {
   height: 100vh;
+  background-color: #e5f6ff;
+}
+.homeContainer {
+  max-width: 1400px;
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+.checkoutContainer {
+  width: 300px;
+  margin: 0px auto;
+  padding: 20px;
+  margin-top: 30px;
+  background: #ffffff;
+  border-radius: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.checkoutContainer p {
+  margin: 10px;
 }
