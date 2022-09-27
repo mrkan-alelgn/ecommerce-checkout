@@ -23,6 +23,7 @@ const Checkout = () => {
   const router = useRouter();
   const { orderId } = router.query;
   const [order, setOrder] = useState<Order>();
+  const [data, setData] = useState<{ message: string }>();
   const [cartProducts, setCartProducts] = useState<state>({
     data: [],
     loading: true,
@@ -31,11 +32,14 @@ const Checkout = () => {
     const getOrder = async () => {
       await fetch(`http://localhost:3000/api/order?id=${orderId}`)
         .then((response) => response.json())
-        .then((json) => setOrder(JSON.parse(json.summary)));
+        .then((json) =>
+          json?.summary ? setOrder(JSON.parse(json.summary)) : setData(json)
+        );
     };
     getOrder();
     console.log;
   }, []);
+  if (data?.message) return <p>{data.message}</p>;
 
   return (
     <div id={styles.appContainer}>
